@@ -10,7 +10,6 @@ import Facilidades from "@/components/Facilidades";
 import Novidades from "@/components/Novidades";
 
 const Home = ({
-  
   carrinho,
   adicionarProduto,
   removerProduto,
