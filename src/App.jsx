@@ -5,7 +5,7 @@ import Carrinho from "./pages/Carrinho";
 import PaginaErro from "./pages/PaginaErro";
 
 import "./App.css";
-import { CarrinhoProvider } from "./context/CarrinhoContext";
+
 
 function App() {
 

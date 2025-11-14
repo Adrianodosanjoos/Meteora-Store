@@ -5,9 +5,7 @@ import { useLocation } from "react-router-dom";
 
 const ListaProdutosCarrinho = ({
   carrinho,
-  adicionarProduto,
-  removerProduto,
-  removerProdutoCarrinho,
+
 }) => {
   const location = useLocation();
   return (
@@ -20,17 +18,13 @@ const ListaProdutosCarrinho = ({
             <ItemCarrinho
               key={itemCarrinho.id}
               itemCarrinho={itemCarrinho}
-              adicionarProduto={adicionarProduto}
-              removerProduto={removerProduto}
-              removerProdutoCarrinho={removerProdutoCarrinho}
+           
             />
           ) : (
             <ItemCarrinhoSuspenso
               key={itemCarrinho.id}
               itemCarrinho={itemCarrinho}
-              adicionarProduto={adicionarProduto}
-              removerProduto={removerProduto}
-              removerProdutoCarrinho={removerProdutoCarrinho}
+        
             />
           );
         })
