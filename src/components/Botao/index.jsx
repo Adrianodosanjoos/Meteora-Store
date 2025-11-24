@@ -7,6 +7,7 @@ const Botao = ({
   className,
   handleClick,
   ...rest
+  
 }) => {
   const buttonStyleMap = {
     default: "btn rounded-0 btn-outline-light",
