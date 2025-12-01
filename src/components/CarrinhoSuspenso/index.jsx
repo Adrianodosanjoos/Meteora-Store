@@ -4,7 +4,7 @@ import Botao from "@/components/Botao";
 import ListaProdutosCarrinho from "@/components/ListaProdutosCarrinho";
 import TotalCarrinho from "./TotalCarrinho";
 import Titulo from "@/components/Titulo";
-import { useCarrinhoContext } from "../../hooks/useCarrinhoContext";
+import { useCarrinhoContext } from "@/hooks/useCarrinhoContext"; // <-- corrigido
 
 const CarrinhoSuspenso = () => {
   const { carrinho, valorTotal } = useCarrinhoContext();
@@ -33,11 +33,13 @@ const CarrinhoSuspenso = () => {
       </div>
       <div className="offcanvas-body">
         <ListaProdutosCarrinho carrinho={carrinho} />
-         <TotalCarrinho valorTotalCarrinho={valorTotal} /> 
+        <TotalCarrinho valorTotalCarrinho={valorTotal} />
       </div>
     </div>
   );
 };
 
 export default CarrinhoSuspenso;
+
+
 
