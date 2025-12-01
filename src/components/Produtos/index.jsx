@@ -1,36 +1,29 @@
-import React from "react";
-import { useCarrinhoContext } from "@/hooks/useCarrinhoContext"; // import corrigido
+import React, { useContext } from "react";
+import Produto from "./Produto";
+import produtos from "@/mocks/produtos.json";
+import Titulo from "@/components/Titulo";
+import { useCarrinhoContext } from "@/hooks/useCarrinhoContext";
+
 
 const Produtos = () => {
-  const {
-    carrinho,
-    adicionarProduto,
-    removerProduto,
-    removerProdutoCarrinho,
-    valorTotal,
-    quantidade,
-  } = useCarrinhoContext();
-
+  const { adicionarProduto } = useCarrinhoContext() 
   return (
-    <div>
-      <h2>Lista de Produtos</h2>
-      {carrinho.map((item) => (
-        <div key={item.id}>
-          <p>{item.nome} - €{item.preco}</p>
-          <p>Quantidade: {item.quantidade}</p>
-          <button onClick={() => adicionarProduto(item)}>Adicionar</button>
-          <button onClick={() => removerProduto(item.id)}>Remover</button>
-          <button onClick={() => removerProdutoCarrinho(item.id)}>
-            Remover do carrinho
-          </button>
-        </div>
-      ))}
-      <hr />
-      <p>Total de itens: {quantidade}</p>
-      <p>Valor total: €{valorTotal}</p>
-    </div>
+    <section role="produtos" aria-label="Produtos que estão bombando!">
+      <Titulo>Produtos que estão bombando!</Titulo>
+      <div className="container row mx-auto">
+        {produtos.map((produto) => (
+          <Produto
+            key={produto.id}
+            {...produto}
+            adicionarProduto={adicionarProduto}
+          />
+        ))}
+      </div>
+    </section>
   );
 };
 
-export default Produtos;
 
+
+
+export default Produtos;
