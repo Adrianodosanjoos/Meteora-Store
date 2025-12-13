@@ -14,6 +14,7 @@ export const CarrinhoProvider = ({ children }) => {
     const { totalTemp, quantidadeTemp } = useMemo(() => {
         return carrinho.reduce(
             (acumulador, produto) => ({
+
                 quantidadeTemp: acumulador.quantidadeTemp + produto.quantidade,
                 totalTemp: acumulador.totalTemp + produto.preco * produto.quantidade,
             }),
